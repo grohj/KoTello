@@ -2,7 +2,7 @@
 A project written in Kotlin allowing taking control of Ryze Tello drone.
 
 
-# Tracking visual signal
+# Tello camera feed
 The library automatically sends `streamon` and `command` commands during connection. For video feed simply install `ffmpeg` and issue following command.
 
 ```
