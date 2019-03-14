@@ -8,7 +8,7 @@ If you decide to use this code and run it without any changes, here is how it wo
 
 It expects you to be connected to the drone wifi before running. After execution blank white screen will show, this window captures your keystrokes, so keep focus on that one.
 
-Use SPACE to lift off and escape to LAND. Press E after takeoff to control the drone using keyboard.
+Use SPACE to lift off and ESCAPE to land. Press E after takeoff to control the drone using keyboard.
 
 Layout: 
   - W and S control altitude
