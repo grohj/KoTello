@@ -9,22 +9,28 @@ fun main(args: Array<String>) {
     val keyListener = FlightKeyListener(tello)
 
     JFrame().apply {
-        setSize(800,600)
+        setSize(800, 600)
         isVisible = true
         addKeyListener(keyListener)
         title = "This window catches key strokes, keep it in focus."
     }
 
 
+    val thread = Thread {
 
+        var lastCmd = ""
 
-    val thread = Thread{
-        while(true) {
-            Thread.sleep(100)
+        while (true) {
+            Thread.sleep(15)
             if (keyListener.enabled) {
+
                 val command = keyListener.getCommand().toString()
-                tello.send(command)
-                println("Send: $command")
+                if (command != lastCmd) {
+                    tello.send(command)
+                    println("Send: $command")
+                    lastCmd = command
+                }
+
             }
 
         }
@@ -33,11 +39,9 @@ fun main(args: Array<String>) {
     thread.join()
 
 
-
-
-
-
-
 }
+
+
+
 
 

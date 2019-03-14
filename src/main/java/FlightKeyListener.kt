@@ -7,8 +7,10 @@ class FlightKeyListener(val connection: TelloConnection) : KeyListener {
 
 
     val keysPressed = mutableSetOf<Int>()
-    val moveStep = 60
-    val altStep = 60
+
+    // Domain of this values is (-100, 100)
+    val moveStep = 100
+    val altStep = 50 //Don't put too much stress on these poor dudes
     val yawStep = 100
 
     var enabled = false
@@ -48,7 +50,7 @@ class FlightKeyListener(val connection: TelloConnection) : KeyListener {
             if (contains(VK_RIGHT)) leftRight += moveStep
 
             if (contains(VK_W)) upDown += altStep
-            if (contains(VK_D)) upDown -= altStep
+            if (contains(VK_S)) upDown -= altStep
 
             if (contains(VK_D)) yaw += yawStep
             if (contains(VK_A)) yaw -= yawStep
